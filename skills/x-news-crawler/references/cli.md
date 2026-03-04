@@ -1,6 +1,15 @@
-# x-news-crawl flags
+# x-news-crawler flags
 
-`./bin/x-news-crawl` wraps `abs` and emits structured JSON.
+`./bin/x-news-crawler` wraps `abs` and emits structured JSON.
+
+## Setup (Required)
+
+Install and approve the global CLI build first:
+
+```bash
+pnpm add -g agent-browser-stealth
+pnpm approve-builds -g
+```
 
 The JSON includes:
 
@@ -28,7 +37,7 @@ The JSON includes:
 ## Example
 
 ```bash
-./bin/x-news-crawl \
+./bin/x-news-crawler \
   --query "openclaw" \
   --mode hybrid \
   --since-hours 72 \

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
-cmd="$repo_root/bin/x-news-crawl"
+cmd="$repo_root/bin/x-news-crawler"
 
 if [[ ! -x "$cmd" ]]; then
   echo "missing executable: $cmd" >&2

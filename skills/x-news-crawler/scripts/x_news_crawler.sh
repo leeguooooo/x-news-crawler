@@ -4,7 +4,7 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  x-news-crawl --query <text> [options]
+  x-news-crawler --query <text> [options]
 
 Options:
   --mode <hybrid|top|latest>   Crawl strategy (default: hybrid)
@@ -126,7 +126,7 @@ print(urllib.parse.quote(sys.argv[1]))
 PY
 )"
 
-workdir="$(mktemp -d "${TMPDIR:-/tmp}/x-news-crawl.XXXXXX")"
+workdir="$(mktemp -d "${TMPDIR:-/tmp}/x-news-crawler.XXXXXX")"
 trap 'rm -rf "$workdir"' EXIT
 
 extract_js_template='

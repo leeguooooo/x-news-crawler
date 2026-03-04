@@ -1,11 +1,20 @@
 ---
-name: x-news-abs-cli
+name: x-news-crawler
 description: Crawl X (Twitter) search results through a local CLI that wraps `abs` (agent-browser). Use when the user asks to scrape X posts by keyword, collect Top/Latest news, extract structured fields (author/time/text/link), or produce a deduplicated "top-first then latest" feed.
 ---
 
-# X News ABS CLI
+# X News Crawler
 
 Use this skill to run one command and get structured X news JSON.
+
+## Prerequisites (Required)
+
+Before any crawl command, run:
+
+```bash
+pnpm add -g agent-browser-stealth
+pnpm approve-builds -g
+```
 
 ## Workflow
 
@@ -18,14 +27,14 @@ Use this skill to run one command and get structured X news JSON.
 From repository root, run:
 
 ```bash
-./bin/x-news-crawl --query "openclaw" --mode hybrid --since-hours 72 --limit 30 --output .tmp/openclaw-news.json
+./bin/x-news-crawler --query "openclaw" --mode hybrid --since-hours 72 --limit 30 --output .tmp/openclaw-news.json
 ```
 
 Quick probes:
 
 ```bash
-./bin/x-news-crawl --query "openclaw" --mode top --limit 10
-./bin/x-news-crawl --query "openclaw" --mode latest --since-hours 24 --limit 20
+./bin/x-news-crawler --query "openclaw" --mode top --limit 10
+./bin/x-news-crawler --query "openclaw" --mode latest --since-hours 24 --limit 20
 ```
 
 ## Output Contract
